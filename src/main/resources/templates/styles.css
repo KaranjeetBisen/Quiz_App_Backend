@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+label {
+    grid-column: 1 / 2;
+}
+
+input {
+    grid-column: 2 / 3;
+    padding: 5px;
+}
+
+button {
+    grid-column: 1 / -1;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.actions {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.actions button {
+    margin: 0 10px;
+}
+
+#output {
+    margin-top: 20px;
+}

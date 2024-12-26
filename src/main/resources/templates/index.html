@@ -1,0 +1,177 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+    }
+    
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    form {
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    label {
+        grid-column: 1 / 2;
+    }
+    
+    input {
+        grid-column: 2 / 3;
+        padding: 5px;
+    }
+    
+    button {
+        grid-column: 1 / -1;
+        padding: 10px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    .actions {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .actions button {
+        margin: 0 10px;
+    }
+    
+    #output {
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz App</h1>
+
+       
+        <form id="questionForm"  method="post">
+            <input type="hidden" id="questionId">
+            <label for="category">Category:</label>
+            <input type="text" id="category" required>
+
+            <label for="questionTitle">Question Title:</label>
+            <input type="text" id="questionTitle" th:field="*{title}" name="title" required >
+              
+
+            <label for="option1">Option 1:</label>
+            <input type="text" id="option1" required>
+
+            <label for="option2">Option 2:</label>
+            <input type="text" id="option2" required>
+
+            <label for="option3">Option 3:</label>
+            <input type="text" id="option3" required>
+
+            <label for="option4">Option 4:</label>
+            <input type="text" id="option4" required>
+
+            <label for="rightAnswer">Right Answer:</label>
+            <input type="text" id="rightAnswer" required>
+
+            <label for="difficultyLevel">Difficulty Level:</label>
+            <input type="text" id="difficultyLevel" required>
+
+            <button type="submit">Add/Update Question</button>
+        </form>
+
+        
+        <div class="actions">
+            <button onclick="getAllQuestions()">Get All Questions</button>
+            <button onclick="getQuestionsByCategory()">Get Questions by Category</button>
+        </div>
+
+        
+        <div id="output"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz App</h1>
+
+        <!-- Form to Add or Update Question -->
+        <form id="questionForm">
+            <input type="hidden" id="questionId">
+
+            <label for="id">ID:</label>
+            <input type="text" id="id" >
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" required>
+
+            <label for="questionTitle">Question Title:</label>
+            <input type="text" id="questionTitle" required>
+
+            <label for="option1">Option 1:</label>
+            <input type="text" id="option1" required>
+
+            <label for="option2">Option 2:</label>
+            <input type="text" id="option2" required>
+
+            <label for="option3">Option 3:</label>
+            <input type="text" id="option3" required>
+
+            <label for="option4">Option 4:</label>
+            <input type="text" id="option4" required>
+
+            <label for="rightAnswer">Right Answer:</label>
+            <input type="text" id="rightAnswer" required>
+
+            <label for="difficultyLevel">Difficulty Level:</label>
+            <input type="text" id="difficultyLevel" required>
+
+            <button type="submit">Add/Update Question</button>
+        </form>
+
+        <!-- Buttons for Actions -->
+        <div class="actions">
+            <button onclick="getAllQuestions()">Get All Questions</button>
+            <button onclick="getQuestionsByCategory()">Get Questions by Category</button>
+        </div>
+
+        <!-- Display Results -->
+        <div id="output"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
