@@ -76,7 +76,7 @@ public class QuestionService {
 
         questionDao.save(existingQuestion);
 
-        response.setMessage("Question updated by id: "+ id);
+        response.setMessage("Question updated by id: " + id);
         response.setData(question);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -84,5 +84,14 @@ public class QuestionService {
     public ResponseEntity<Question> getQuestionById(Integer id) {
         Question question = questionDao.findById(id).get();
         return new ResponseEntity(question, HttpStatus.OK);
+    }
+
+    public ResponseEntity<List<String>> getAllCategories() {
+        try {
+            return new ResponseEntity<>(questionDao.findDistinctCategory(), HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 }

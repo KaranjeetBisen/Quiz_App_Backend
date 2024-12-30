@@ -18,7 +18,6 @@ import com.example.quizapp.quizapp.model.ApiResponse;
 import com.example.quizapp.quizapp.model.Question;
 import com.example.quizapp.quizapp.service.QuestionService;
 
-
 @CrossOrigin(origins = "http://localhost:4200")
 @Controller
 @RequestMapping("/question")
@@ -31,11 +30,15 @@ public class QuestionController {
     // public String showPage() {
     // return "quizApplication";
     // }
-
     // Crud Questions Controller
     @GetMapping("/allQuestions")
     public ResponseEntity<List<Question>> getAllQuestions() {
         return questionService.getAllQuestions();
+    }
+
+    @GetMapping("/allCategories")
+    public ResponseEntity<List<String>> getAllCategories() {
+        return questionService.getAllCategories();
     }
 
     @GetMapping("category/{category}")
@@ -62,6 +65,5 @@ public class QuestionController {
     public ResponseEntity<Question> getQuestionByid(@PathVariable Integer id) {
         return questionService.getQuestionById(id);
     }
-    
 
 }
