@@ -61,8 +61,9 @@ public class QuizService {
             }
             i++;
         }
+        String totalQuestions = String.valueOf(questions.size());
         String value = String.valueOf(right);
-        return new ResponseEntity<>(value, HttpStatus.OK);
+        return new ResponseEntity<>(value+" out of "+ totalQuestions, HttpStatus.OK);
     }
 
     public ResponseEntity<List<Quiz>> getAllQuiz() {
