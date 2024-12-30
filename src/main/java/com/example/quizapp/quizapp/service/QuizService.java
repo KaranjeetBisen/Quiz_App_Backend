@@ -63,4 +63,9 @@ public class QuizService {
         }
         return new ResponseEntity<>(right, HttpStatus.OK);
     }
+
+    public ResponseEntity<List<Quiz>> getAllQuiz() {
+       List<Quiz> quizs = quizDao.findAll();
+       return new ResponseEntity<>(quizs, HttpStatus.OK);
+    }
 }
