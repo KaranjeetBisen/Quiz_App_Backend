@@ -50,7 +50,7 @@ public class QuizService {
 
     }
 
-    public ResponseEntity<Integer> calculateResult(Integer id, List<Response> responses) {
+    public ResponseEntity<String> calculateResult(Integer id, List<Response> responses) {
         Quiz quiz = quizDao.findById(id).get();
         List<Question> questions= quiz.getQuestions();
         int right = 0;
@@ -61,7 +61,8 @@ public class QuizService {
             }
             i++;
         }
-        return new ResponseEntity<>(right, HttpStatus.OK);
+        String value = String.valueOf(right);
+        return new ResponseEntity<>(value, HttpStatus.OK);
     }
 
     public ResponseEntity<List<Quiz>> getAllQuiz() {
